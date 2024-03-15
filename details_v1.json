@@ -23,9 +23,6 @@
           "pattern": "^[7-9]{1}[0-9]{9}$",
           "description": "the person's phone number, format: 9888787877"
         },
-        "address":{
-            "$ref":"https://github.com/akshitShetty18/Schema/blob/main/address_v1.json"
-        },
         "contact":{
           "allOf":[
             {
@@ -60,5 +57,5 @@
         },
         "required":["UPIId"]
       },
-      "required": ["name", "age", "address","phoneNumber","contact","modeOfPayment"]
+      "required": ["name", "age","phoneNumber","contact","modeOfPayment"]
 }
