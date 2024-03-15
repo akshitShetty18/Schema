@@ -18,6 +18,9 @@
           "type":"string",
           "enum": ["male","female","others"]
         },
+         "address":{
+            "$ref":"https://raw.githubusercontent.com/akshitShetty18/Schema/main/address_v1.json"
+        },
         "phoneNumber":{
           "type": "string",
           "pattern": "^[7-9]{1}[0-9]{9}$",
