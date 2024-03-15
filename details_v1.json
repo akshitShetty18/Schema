@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://schemas_example.com/details_v1.json",
+    "$id": "https://github.com/akshitShetty18/Schema/blob/main/details_v1.json",
     "title": "UserDetails",
     "type": "object",
     "properties": {
