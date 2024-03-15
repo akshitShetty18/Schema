@@ -1,0 +1,64 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schemas_example.com/details_v1.json",
+    "title": "UserDetails",
+    "type": "object",
+    "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 3,
+          "description": "the persons name"
+        },
+        "age": {
+          "type": "integer",
+          "minimum": 900,
+          "description" : "the persons age"
+        },
+        "gender":{
+          "type":"string",
+          "enum": ["male","female","others"]
+        },
+        "phoneNumber":{
+          "type": "string",
+          "pattern": "^[7-9]{1}[0-9]{9}$",
+          "description": "the person's phone number, format: 9888787877"
+        },
+        "address":{
+            "$ref":"file:///C:/Users/AkshitShetty/Desktop/code/Demo/address_v1.json"
+        },
+        "contact":{
+          "allOf":[
+            {
+              "properties":{
+                "email":{ "type":"string", "format": "email"}
+              },
+              "required":["email"]
+            },
+            {
+              "properties":{
+                "phone":{ "type":"string", "pattern": "^[7-9]{1}[0-9]{9}$"}
+              },
+              "required":["phone"]
+            }
+          ]
+        },
+        "modeOfPayment":{
+          "type":"string",
+          "enum":["cash","UPI"]
+        }
+      },
+      "if":{
+        "properties":{
+          "modeOfPayment":{"const":"UPI"}
+        }
+      },
+      "then":{
+        "properties":{
+          "UPIId":{
+            "type":"string"
+          }
+        },
+        "required":["UPIId"]
+      },
+      "required": ["name", "age", "address","phoneNumber","contact","modeOfPayment"]
+}
