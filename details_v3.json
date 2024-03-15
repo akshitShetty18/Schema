@@ -60,5 +60,5 @@
         },
         "required":["UPIId"]
       },
-      "required": ["name", "age","phoneNumber","contact","modeOfPayment"]
+      "required": ["name", "age","address","phoneNumber","contact","modeOfPayment"]
 }
